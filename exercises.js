@@ -26,6 +26,23 @@
  * ie: "cake" => "acek"
  */
 
+ function alphaOrder(str) {
+  //console.log(typeof str);
+  if(typeof str === "string") {
+    //console.log(str);
+    var sortStr = str.split("");//convert str to array
+    //console.log("split",sortStr);
+    sortStr.sort(); //sorts array alphabetically
+    //console.log("sort",sortStr);
+    sortStr = sortStr.join(""); //convert array to str
+    //console.log("result",sortStr);
+    return sortStr;
+  } else {
+    //console.log("type null");
+    return null;
+  }
+ }
+
  /** Function: vowelCount
  * The function will take the str parameter being passed in and
  * return the number of vowels in the string
