@@ -51,6 +51,25 @@
  * ie: "oreo" => 3
  */
 
+ function vowelCount(str) {
+  var vowelNum = 0;
+  var vowelArray = ["a","e","i","o","u"];
+  if(typeof str === "string") { //return null if not string
+    for(var i = 0; i<str.length;i++) {//cycle through string
+      var currentLetter = str.substr(i,1); //get each letter
+      //console.log("curL",currentLetter);
+      for(var t = 0; t < vowelArray.length;t++) {//cycle through vowel array
+        if(vowelArray[t] === currentLetter) {//is currentLetter the vowel from this array Pos?
+          vowelNum++;//increment if so
+        }
+      }
+    }
+      return vowelNum;
+  } else {
+      return null;
+    }
+ }
+
  /** Function: timeConvert
  * The function will take the str parameter representing the amount of minutes being passed in and
  * return the number of hours and minutes. Seperate the number of hours
@@ -59,6 +78,7 @@
  * @return {string} as hours:minutes
  * ie: 68 => 1:8
  */
+ 
 
  /** Function: repeatString
  * The function will take in two parameters and repeat a given string (first argument)
@@ -87,7 +107,7 @@
 module.exports = {
     firstReverse: firstReverse,
     alphaOrder: alphaOrder,
-    vowelCount: null,
+    vowelCount: vowelCount,
     timeConvert: null,
     repeatString: null
 }
