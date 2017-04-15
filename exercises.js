@@ -83,21 +83,16 @@
   if(typeof str === "number") { //return null if not #
     //separate hours
     var hours = Math.floor(str/60);
-    console.log("hours",hours);
     //separate minutes
     var minutes = str % 60;
-    console.log("minutes",minutes);
     //concatenate into time hours:minutes
     var time = hours + ":" + minutes;
-    console.log("time",time);
     //convert into string 
     time = time.toString();
-    console.log(time);
     return time;
   } else {
     return null;
   }
-  
  }
 
 
@@ -109,6 +104,23 @@
  * @return {string} repeated num times
  * i.e repeatString("money", 3) => "moneymoneymoney".
  */
+
+ function repeatString(string,number) {
+  //return null if para1 != string, para2 != number
+  if((typeof string === "string") && (typeof number === "number")) {
+    var repeatString = "";
+    //return emptystring if number is negative
+    if( number >= 0 ) {
+    //repeat string for "number" times
+      for(var i = 0; i<number;i++) {
+        repeatString = repeatString.concat(string);
+      }
+    }
+    return repeatString;
+  } else {
+    return null;
+  }
+ }
 
 
 /**
@@ -130,5 +142,5 @@ module.exports = {
     alphaOrder: alphaOrder,
     vowelCount: vowelCount,
     timeConvert: timeConvert,
-    repeatString: null
+    repeatString: repeatString
 }
