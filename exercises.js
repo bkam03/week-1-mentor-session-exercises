@@ -5,6 +5,19 @@
  * @return {string} reversed
  * ie: "cat" => "tac"
  */
+ function firstReverse(str) {
+  if(typeof str === "string") {
+    var reverseStr = str.split(""); //convert str to array of single char
+    //console.log(reverseStr);
+    reverseStr = reverseStr.reverse() //reverse array
+    //console.log(reverseStr);
+    reverseStr = reverseStr.toString();//convert array back to string
+    //console.log(reverseStr);
+    return reverseStr;
+  } else {
+    return null;
+  }
+ }
 
  /** Function: alphaOrder
  * The function will take the str parameter being passed in and
@@ -56,7 +69,7 @@
  */
 
 module.exports = {
-    firstReverse: null,
+    firstReverse: firstReverse,
     alphaOrder: null,
     vowelCount: null,
     timeConvert: null,
