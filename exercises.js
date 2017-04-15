@@ -8,11 +8,10 @@
  function firstReverse(str) {
   if(typeof str === "string") {
     var reverseStr = str.split(""); //convert str to array of single char
+    reverseStr = reverseStr.reverse(); //reverse array
     //console.log(reverseStr);
-    reverseStr = reverseStr.reverse() //reverse array
-    //console.log(reverseStr);
-    reverseStr = reverseStr.toString();//convert array back to string
-    //console.log(reverseStr);
+    reverseStr = reverseStr.join("");//convert array back to string
+    //console.log(str,reverseStr);
     return reverseStr;
   } else {
     return null;
@@ -70,7 +69,7 @@
 
 module.exports = {
     firstReverse: firstReverse,
-    alphaOrder: null,
+    alphaOrder: alphaOrder,
     vowelCount: null,
     timeConvert: null,
     repeatString: null
