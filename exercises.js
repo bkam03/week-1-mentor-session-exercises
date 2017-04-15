@@ -78,7 +78,28 @@
  * @return {string} as hours:minutes
  * ie: 68 => 1:8
  */
- 
+
+ function timeConvert(str) {
+  if(typeof str === "number") { //return null if not #
+    //separate hours
+    var hours = Math.floor(str/60);
+    console.log("hours",hours);
+    //separate minutes
+    var minutes = str % 60;
+    console.log("minutes",minutes);
+    //concatenate into time hours:minutes
+    var time = hours + ":" + minutes;
+    console.log("time",time);
+    //convert into string 
+    time = time.toString();
+    console.log(time);
+    return time;
+  } else {
+    return null;
+  }
+  
+ }
+
 
  /** Function: repeatString
  * The function will take in two parameters and repeat a given string (first argument)
@@ -108,6 +129,6 @@ module.exports = {
     firstReverse: firstReverse,
     alphaOrder: alphaOrder,
     vowelCount: vowelCount,
-    timeConvert: null,
+    timeConvert: timeConvert,
     repeatString: null
 }
